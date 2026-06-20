@@ -1,0 +1,17 @@
+{
+  "name": "CE Classes Admin",
+  "short_name": "CE Admin",
+  "description": "Continuing Education class administration",
+  "start_url": "/admin",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "icons": [
+    {
+      "src": "/brand/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
