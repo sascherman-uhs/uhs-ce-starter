@@ -11,6 +11,7 @@ import {
 } from "../actions"
 import { formatCents } from "@/lib/money"
 import { RefundButton } from "./refund-button"
+import { displayPhone } from "@/lib/phone"
 
 type Attendee = {
   id: string
@@ -463,7 +464,7 @@ function EditAttendeeRow({
               <label className="block text-xs text-muted-foreground">Phone</label>
               <input
                 name="phone"
-                defaultValue={attendee.phone ?? ""}
+                defaultValue={displayPhone(attendee.phone)}
                 className="w-full rounded border border-input px-2 py-1 text-sm"
               />
               {state.fieldErrors?.phone && (
