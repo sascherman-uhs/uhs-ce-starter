@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 
@@ -13,6 +13,10 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
     title: "CE Admin",
   },
+}
+
+// Next 15 ignores metadata.themeColor; it belongs on the viewport export.
+export const viewport: Viewport = {
   themeColor: "#1a1a2e",
 }
 

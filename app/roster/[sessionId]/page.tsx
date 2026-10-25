@@ -4,11 +4,12 @@ import { formatSessionDate, formatSessionTime } from "@/lib/utils/dates"
 
 export const dynamic = "force-dynamic"
 
-export default async function RosterPage({
-  params,
-}: {
-  params: { sessionId: string }
-}) {
+export default async function RosterPage(
+  props: {
+    params: Promise<{ sessionId: string }>
+  }
+) {
+  const params = await props.params;
   const { sessionId } = params
   const admin = createAdminClient()
 

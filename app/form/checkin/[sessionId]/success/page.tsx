@@ -1,12 +1,13 @@
 import { createAdminClient } from "@/lib/supabase/admin"
 
-export default async function CheckInSuccessPage({
-  params,
-  searchParams,
-}: {
-  params: { sessionId: string }
-  searchParams: { name?: string }
-}) {
+export default async function CheckInSuccessPage(
+  props: {
+    params: Promise<{ sessionId: string }>
+    searchParams: Promise<{ name?: string }>
+  }
+) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { sessionId } = params
   const attendeeName = searchParams.name || "Attendee"
   const admin = createAdminClient()

@@ -9,13 +9,14 @@ import { GateCheck } from "./gate-check"
 // class-wide eval submissions are not cut off. Valid on Vercel Hobby and Pro.
 export const maxDuration = 60
 
-export default async function EvalPage({
-  params,
-  searchParams,
-}: {
-  params: { sessionId: string }
-  searchParams: { license?: string }
-}) {
+export default async function EvalPage(
+  props: {
+    params: Promise<{ sessionId: string }>
+    searchParams: Promise<{ license?: string }>
+  }
+) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { sessionId } = params
   const admin = createAdminClient()
 

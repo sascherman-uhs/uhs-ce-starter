@@ -28,13 +28,14 @@ export const dynamic = "force-dynamic"
  *
  * Copy is verbatim from UI-SPEC §"Stripe Checkout success page".
  */
-export default async function RegistrationSuccessPage({
-  params,
-  searchParams,
-}: {
-  params: { sessionId: string }
-  searchParams: { cs?: string }
-}) {
+export default async function RegistrationSuccessPage(
+  props: {
+    params: Promise<{ sessionId: string }>
+    searchParams: Promise<{ cs?: string }>
+  }
+) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { sessionId } = params
   const checkoutSessionId = searchParams?.cs
   const admin = createAdminClient()

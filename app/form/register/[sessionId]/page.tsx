@@ -3,11 +3,12 @@ import { formatSessionDate, formatSessionTime } from "@/lib/utils/dates"
 import { resolveCoupon } from "@/lib/stripe/coupon"
 import { RegisterForm } from "./register-form"
 
-export default async function RegisterPage({
-  params,
-}: {
-  params: { sessionId: string }
-}) {
+export default async function RegisterPage(
+  props: {
+    params: Promise<{ sessionId: string }>
+  }
+) {
+  const params = await props.params;
   const { sessionId } = params
   const admin = createAdminClient()
 

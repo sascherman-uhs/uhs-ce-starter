@@ -2,14 +2,14 @@ import { createClient } from "@/lib/supabase/server"
 import { formatSessionDate, formatSessionTime } from "@/lib/utils/dates"
 import Link from "next/link"
 
-export default async function AdminDashboard({
-  searchParams,
-}: {
-  searchParams: { status?: string }
-}) {
+export default async function AdminDashboard(
+  props: {
+    searchParams: Promise<{ status?: string }>
+  }
+) {
+  const searchParams = await props.searchParams;
   const supabase = await createClient()
 
-  // Next.js 14: searchParams is synchronous — do NOT await.
   const showAll = searchParams.status === "all"
 
   let query = supabase

@@ -14,11 +14,12 @@ import { formatSessionDate, formatSessionTime } from "@/lib/utils/dates"
  *
  * Copy is verbatim from UI-SPEC §"Stripe Checkout cancel page".
  */
-export default async function CancelledPage({
-  params,
-}: {
-  params: { sessionId: string }
-}) {
+export default async function CancelledPage(
+  props: {
+    params: Promise<{ sessionId: string }>
+  }
+) {
+  const params = await props.params;
   const { sessionId } = params
   const admin = createAdminClient()
 
