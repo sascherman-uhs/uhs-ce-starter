@@ -42,7 +42,7 @@ All client data, credentials, and company-specific branding have been removed.
 
 ## Tech stack
 
-Next.js 14 (App Router, Server Actions) · React 18 · TypeScript · Tailwind CSS ·
+Next.js 15 (App Router, Server Actions) · React 19 · TypeScript · Tailwind CSS ·
 Supabase (Postgres + Auth + Storage) · `@react-pdf/renderer` · `qrcode`.
 
 ---

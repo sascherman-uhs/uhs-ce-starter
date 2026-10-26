@@ -21,35 +21,35 @@ const EvalSchema = z.object({
     ),
   // INSTRUCTOR ratings — column names match ce_evaluations table exactly
   instructor_knowledge: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   instructor_questions_examples: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   instructor_presented_topics: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   instructor_timely: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   instructor_control_disruptions: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   // CONTENT/MATERIALS ratings — column names match ce_evaluations table exactly
   content_objectives: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   content_organization: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   content_practical_value: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   content_resource_value: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   content_current: z.enum(RATING_VALUES, {
-    required_error: "Rating required",
+    error: "Rating required",
   }),
   // Comments — column names match ce_evaluations table exactly
   comments_not_acceptable: z.string().optional(),

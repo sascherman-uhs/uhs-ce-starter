@@ -24,7 +24,7 @@ const RegistrationSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().optional(),
   attestation: z.literal("on", {
-    errorMap: () => ({ message: "You must agree to attend the full session" }),
+    error: "You must agree to attend the full session",
   }),
   // Phase 8 (D-09, D-11): optional Stripe promotion code (uppercase, alphanumeric + dash/underscore)
   coupon_code: z
